@@ -1,1 +1,3 @@
 Hello, working on git sub-module of DevOps fundamentals!
+
+Now checking if my global config updates is reflecting in my git log command.
