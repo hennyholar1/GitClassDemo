@@ -3,3 +3,4 @@ Hello, working on git sub-module of DevOps fundamentals!
 Now checking if my global config updates is reflecting in my git log command.
 
 Removed the quotes in the global file config setting for user name and email.
+Now appended e to the mail to make it email.
