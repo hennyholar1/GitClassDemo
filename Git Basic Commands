@@ -1,0 +1,82 @@
+Thursday, April 4, 2019 5:32 PM
+
+
+git push  ====> to push local copy to remote branch
+git push --set-upstream new-branch-name ====> to register and link a new-create-branch to remote server branch
+git stash  ====> save changes to a separate local space
+git fetch ====> get the remote copy without changing the local copy
+git checkout branch-name ====> check out a branch and switch to it for usage
+git checkout branch-name className with complete path =====> copy class from the named branch to the current branch
+git stash apply ====> get the separate local saved copy an move it to the current branch
+git  add .  ====> add code to local repo/branch
+git commit -m "Comment message" ====> to commit the added code to local repo
+git commit -am "Comment message" ====> add and commit the added code to local repo
+Git commit --amend -m "the right commit message" ====> amend and commit the initial wrong commit to local repo
+
+git pull origin develop ====> pulls from the Develop branch to remote branch for local copy to be updated.
+git push origin HEAD ====> pushes to the remote branch
+git remote prune origin ====> prune all branches that are not in the remote (Bitbucket)
+git branch -D branch-name ====> Deletes specified branch from the local repo.
+git remote show origin
+
+git checkout origin/develop --f src/main/java/org/frb/stls/cars/atm/ui/tests/validations/wjv/WjvValidation.java  ===> to override local bit-bucket branch copy
+
+git reset 7a86cb53267 --hard ===> Resets to the committed specified key and all changes made after the key are lost
+git reset 7a86cb53267 --soft ===> Reset to the committed specified key but all changes made after it are still available
+
+Git log and press Enter ====> shows logs of all commits 
+git commit --amend and press Enter ====> enables you to amend commit messages.
+
+git config --list  =====> shows the configuration setting
+
+git config --global user.email johndoe@example.com  =====> set the user email
+
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin" ====  Pops up NotePad ++ for commit message/comment
+
+$ git config --list --show-origin  =====>  You can view all of your settings and where they are coming from using:
+git config --global core.editor notepad.exe  ======> Pops up NotePad  for commit message/comment
+
+
+
+
+From <https://help.github.com/en/articles/changing-a-commit-message> 
+
+
+From <https://stackoverflow.com/questions/9587686/easier-way-to-keep-a-git-feature-branch-up-to-date> 
+Save as: merge-develop.sh 
+#!/bin/bash
+git checkout develop
+git pull
+git checkout feature/$1
+git merge develop 
+git push
+
+Then run:	     merge-develop.sh branch-name
+
+Or manually do this: 
+git checkout feature/foo
+git pull --all
+git rebase develop
+
+
+
+
+You can view all of your settings and where they are coming from using:
+$ git config --list --show-origin  (The last listing of a setting is the one that is in effect, which you can verify with:
+ git config core.autocrlf)
+ 
+Other git links:
+If you want to check your configuration settings, you can use the:
+git config --list command to list all of the settings Git can find at that point.
+ 
+ 
+Useful reference page: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+ 
+To set Notepad++ as the default editor for git enter this:
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+ 
+ 
+You may see keys more than once, because Git reads the same key from different files (/etc/gitconfig and ~/.gitconfig, for example). In this case, Git uses the last value for each unique key it sees
+ 
+ 
+You can also check what Git thinks a specific key’s value is by typing git config <key> , example:  “git config user.name” or “git config core.autocrlf”
